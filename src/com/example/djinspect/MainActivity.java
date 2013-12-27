@@ -7,6 +7,7 @@ import org.opencv.android.OpenCVLoader;
 import org.opencv.android.CameraBridgeViewBase.CvCameraViewFrame;
 import org.opencv.android.CameraBridgeViewBase.CvCameraViewListener2;
 import org.opencv.core.Mat;
+import org.opencv.highgui.Highgui;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -31,6 +32,7 @@ public class MainActivity extends Activity implements CvCameraViewListener2 {
 		setContentView(R.layout.activity_main);
 		
 		mOpenCvCameraView = (CameraBridgeViewBase) findViewById(R.id.camView);
+		mOpenCvCameraView.setCameraIndex(1);
 		mOpenCvCameraView.setVisibility(SurfaceView.VISIBLE);
 		mOpenCvCameraView.setCvCameraViewListener(this);
 
